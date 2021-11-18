@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace RedBadgeFinal.Data
 {
-    public class Consumable : ItemType
+    public class Consumable : ItemTypes
     {
         [Key]
         public int ConsumableId { get; set; }
 
-        [ForeignKey(nameof(ItemType))]
-        public int ItemIds { get; set; }
+/*        [ForeignKey(nameof(Data.ItemTypes))]
+        public int ItemIds { get; set; }*/
 
 
         public int Uses { get; set; }

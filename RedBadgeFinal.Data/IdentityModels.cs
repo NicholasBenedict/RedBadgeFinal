@@ -36,7 +36,7 @@ namespace RedBadgeFinal.Data
         public DbSet<CharacterSpell>CharacterSpells { get; set; }
         public DbSet<Spell> Spells { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
-        public DbSet<ItemType> Items { get; set; }
+        public DbSet<ItemTypes> Items { get; set; }
 /*      public DbSet<Armor> Armors { get; set; }
         public DbSet<Consumable> Consumables { get; set; }
         public DbSet<Weapon> Weapons { get; set; }*/

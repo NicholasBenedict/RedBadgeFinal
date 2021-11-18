@@ -11,6 +11,7 @@ namespace RedBadgeFinal.Data
     {
         [Key]
         public int CharacterId { get; set; }
+        public string ChracterName { get; set; }
         public RaceType CharacterRace { get; set; }
         public ClassType CharacterClass { get; set; }
         public int Level { get; set; }

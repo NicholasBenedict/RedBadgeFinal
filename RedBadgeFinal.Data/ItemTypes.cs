@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RedBadgeFinal.Data
 {
-    public class ItemType
+    public class ItemTypes
     {
         [Key]
         public int ItemId { get; set; }
@@ -19,7 +19,7 @@ namespace RedBadgeFinal.Data
 
         public int ItemValue { get; set; }
 
-        public TypeOfItem ItemTypes { get; set; }
+        public TypeOfItem Item { get; set; }
     }
 
     public enum TypeOfItem

@@ -18,9 +18,9 @@ namespace RedBadgeFinal.Data
         public virtual Character Character { get; set; }
 
         [Key, Column(Order = 1)]
-        [ForeignKey(nameof(ItemType))]
+        [ForeignKey(nameof(Items))]
         public int ItemId { get; set; }
-        public virtual ItemType Item { get; set; }
+        public virtual ItemTypes Items { get; set; }
 
         //public int Weight { get; set; }
 
