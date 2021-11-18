@@ -1,0 +1,122 @@
+﻿@model RedBadgeFinal.Models.CharacterDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CharacterDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CharaterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharaterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterRace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterRace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterBackground)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterBackground)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HitPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HitPoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Strength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Strength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dexterity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dexterity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Constitution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Constitution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Intelligence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Intelligence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wisdom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wisdom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Charisma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Charisma)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CharaterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -7,15 +7,20 @@ using System.Threading.Tasks;
 
 namespace RedBadgeFinal.Models
 {
-    public class CharacterListItem
+    public class CharacterEdit
     {
         public int CharacterId { get; set; }
         public string CharacterName { get; set; }
-
         public RaceType CharacterRace { get; set; }
-
         public ClassType CharacterClass { get; set; }
-
         public int Level { get; set; }
+        public int HitPoints { get; set; }
+        public BackgroundType CharacterBackground { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Constitution { get; set; }
+        public int Intelligence { get; set; }
+        public int Wisdom { get; set; }
+        public int Charisma { get; set; }
     }
 }

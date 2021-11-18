@@ -14,12 +14,12 @@ namespace RedBadgeFinal.Services
         {
             var entity = new Character()
             {
-                ChracterName = model.ChracterName,
+                CharacterName = model.CharacterName,
                 CharacterRace = model.CharacterRace,
                 CharacterClass = model.CharacterClass,
                 Level = model.Level,
                 HitPoints = model.HitPoints,
-                ChracterBackground = model.ChracterBackground,
+                CharacterBackground = model.ChracterBackground,
                 Strength = model.Strength,
                 Dexterity = model.Dexterity,
                 Constitution = model.Constitution,
@@ -31,6 +31,89 @@ namespace RedBadgeFinal.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Characters.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<CharacterListItem> GetCharacters()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx
+                    .Characters
+                    .Select
+                    (e => new CharacterListItem
+                    {
+                        CharacterId = e.CharacterId,
+                        CharacterName = e.CharacterName,
+                        CharacterRace = e.CharacterRace,
+                        CharacterClass = e.CharacterClass,
+                        Level = e.Level
+                    });
+
+                return query.ToArray();
+            }
+        }
+
+        public CharacterDetail GetCharacterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Characters
+                    .Single(e => e.CharacterId == id);
+                return
+                    new CharacterDetail
+                    {
+                        CharaterId = entity.CharacterId,
+                        CharacterName = entity.CharacterName,
+                        CharacterRace = entity.CharacterRace,
+                        CharacterClass = entity.CharacterClass,
+                        Level = entity.Level,
+                        HitPoints = entity.HitPoints,
+                        CharacterBackground = entity.CharacterBackground,
+                        Strength = entity.Strength,
+                        Dexterity = entity.Dexterity,
+                        Constitution = entity.Constitution,
+                        Intelligence = entity.Intelligence,
+                        Wisdom = entity.Wisdom,
+                        Charisma = entity.Charisma
+                    };
+            }
+        }
+
+        public bool UpdateCharacter(CharacterEdit Model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.Characters.Single(e => e.CharacterId == Model.CharacterId);
+
+                entity.CharacterName = Model.CharacterName;
+                entity.CharacterRace = Model.CharacterRace;
+                entity.CharacterClass = Model.CharacterClass;
+                entity.Level = Model.Level;
+                entity.HitPoints = Model.HitPoints;
+                entity.CharacterBackground = Model.CharacterBackground;
+                entity.Strength = Model.Strength;
+                entity.Dexterity = Model.Dexterity;
+                entity.Constitution = Model.Constitution;
+                entity.Intelligence = Model.Intelligence;
+                entity.Wisdom = Model.Wisdom;
+                entity.Charisma = Model.Charisma;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteCharacter(int characterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Characters.Single(e => e.CharacterId == characterId);
+
+                ctx.Characters.Remove(entity);
+
                 return ctx.SaveChanges() == 1;
             }
         }

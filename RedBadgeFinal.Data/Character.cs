@@ -11,12 +11,12 @@ namespace RedBadgeFinal.Data
     {
         [Key]
         public int CharacterId { get; set; }
-        public string ChracterName { get; set; }
+        public string CharacterName { get; set; }
         public RaceType CharacterRace { get; set; }
         public ClassType CharacterClass { get; set; }
         public int Level { get; set; }
         public int HitPoints { get; set; }
-        public BackgroundType ChracterBackground { get; set; }
+        public BackgroundType CharacterBackground { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
