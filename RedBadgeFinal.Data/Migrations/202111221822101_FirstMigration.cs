@@ -7,23 +7,21 @@ namespace RedBadgeFinal.Data.Migrations
     {
         public override void Up()
         {
-           
+            
             
             CreateTable(
-                "dbo.CharacterSpell",
+                "dbo.Inventory",
                 c => new
                     {
-                        CharacterSpellId = c.Int(nullable: false, identity: true),
+                        InventoryId = c.Int(nullable: false, identity: true),
                         CharacterId = c.Int(nullable: false),
-                        SpellId = c.Int(nullable: false),
+                        ItemId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.CharacterSpellId)
-                .ForeignKey("dbo.Character", t => t.CharacterId, cascadeDelete: false)
-                .ForeignKey("dbo.Spell", t => t.SpellId, cascadeDelete: false)
+                .PrimaryKey(t => t.InventoryId)
+                .ForeignKey("dbo.Character", t => t.CharacterId, cascadeDelete: true)
+                .ForeignKey("dbo.ItemTypes", t => t.ItemId, cascadeDelete: true)
                 .Index(t => t.CharacterId)
-                .Index(t => t.SpellId);
-            
-            
+                .Index(t => t.ItemId);
             
         }
         

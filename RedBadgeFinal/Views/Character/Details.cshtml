@@ -115,14 +115,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SpellName)
+            @Html.DisplayNameFor(model => model.Spells)
         </dt>
-            @foreach (var item in Model.SpellName)
-            {
-                <dt>
-                    @Html.DisplayFor(modelItem => item.SpellName)
-                </dt>
-            }
+        @foreach (var item in Model.Spells)
+        {
+            <dt>
+                @Html.DisplayFor(modelItem => item.SpellName)
+            </dt>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inventory)
+        </dt>
+        @foreach (var item in Model.Inventory)
+        {
+            <dt>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </dt>
+        }
 
     </dl>
 </div>

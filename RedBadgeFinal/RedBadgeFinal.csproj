@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\CharacterSpellsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SpellController.cs" />
@@ -257,6 +258,10 @@
     <Content Include="Views\CharacterSpells\DeletePost.cshtml" />
     <Content Include="Views\CharacterSpells\Index.cshtml" />
     <Content Include="Views\CharacterSpells\Details.cshtml" />
+    <Content Include="Views\Inventory\Index.cshtml" />
+    <Content Include="Views\Inventory\Create.cshtml" />
+    <Content Include="Views\Inventory\Details.cshtml" />
+    <Content Include="Views\Inventory\DeletePost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

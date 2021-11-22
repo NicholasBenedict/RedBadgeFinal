@@ -1,4 +1,5 @@
 ﻿using RedBadgeFinal.Data;
+using RedBadgeFinal.Models.ItemModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace RedBadgeFinal.Models
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
 
-        public List<SpellList> SpellName { get; set; }
+        public List<SpellList> Spells { get; set; }
+        public List<ItemList> Inventory { get; set; }
     }
 }

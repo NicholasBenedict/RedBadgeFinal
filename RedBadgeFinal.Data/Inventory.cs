@@ -10,14 +10,14 @@ namespace RedBadgeFinal.Data
 {
     public class Inventory
     {
-        /*        [Key]
-         *        public int InventoryId { get; set; }*/
         [Key, Column(Order = 0)]
+        public int InventoryId { get; set; }
+        [Column(Order = 1)]
         [ForeignKey(nameof(Character))]
         public int CharacterId { get; set; }
         public virtual Character Character { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Column(Order = 2)]
         [ForeignKey(nameof(Items))]
         public int ItemId { get; set; }
         public virtual ItemTypes Items { get; set; }

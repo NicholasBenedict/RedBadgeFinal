@@ -1,5 +1,6 @@
 ﻿using RedBadgeFinal.Data;
 using RedBadgeFinal.Models;
+using RedBadgeFinal.Models.ItemModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,7 +79,8 @@ namespace RedBadgeFinal.Services
                         Intelligence = entity.Intelligence,
                         Wisdom = entity.Wisdom,
                         Charisma = entity.Charisma,
-                        SpellName = entity.Spells.Select(e => new SpellList {SpellId = e.Spell.SpellId, SpellName = e.Spell.SpellName }).ToList()
+                        Spells = entity.Spells.Select(e => new SpellList { SpellId = e.Spell.SpellId, SpellName = e.Spell.SpellName }).ToList(),
+                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName }).ToList()
                     };
             }
         }
