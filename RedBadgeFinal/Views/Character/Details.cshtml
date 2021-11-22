@@ -114,6 +114,16 @@
             @Html.DisplayFor(model => model.Charisma)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.SpellName)
+        </dt>
+            @foreach (var item in Model.SpellName)
+            {
+                <dt>
+                    @Html.DisplayFor(modelItem => item.SpellName)
+                </dt>
+            }
+
     </dl>
 </div>
 <p>

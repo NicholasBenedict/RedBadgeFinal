@@ -54,8 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSpellToCharacter.cs" />
     <Compile Include="CharacterService.cs" />
+    <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpellService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

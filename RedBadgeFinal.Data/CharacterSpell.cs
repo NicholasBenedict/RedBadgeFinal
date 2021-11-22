@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 namespace RedBadgeFinal.Data
 {
     public class CharacterSpell
-    {
+    { 
         [Key, Column(Order = 0)]
+        public int CharacterSpellId { get; set; }
+
+        [Column(Order = 1)]
         [ForeignKey(nameof(Character))]
         public int CharacterId { get; set; }
         public virtual Character Character { get; set; }
 
-        [Key, Column(Order = 1)]
+        [Column(Order = 2)]
         [ForeignKey(nameof(Spell))]
         public int SpellId { get; set; }
         public virtual Spell Spell { get; set; }
