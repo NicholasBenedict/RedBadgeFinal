@@ -116,27 +116,34 @@
 
         <dt>
             @Html.DisplayNameFor(model => model.Spells)
+            @Html.ActionLink("Add Spell", "Create", "CharacterSpells")
         </dt>
         @foreach (var item in Model.Spells)
         {
-            <dt>
+            <dd>
                 @Html.DisplayFor(modelItem => item.SpellName)
-            </dt>
+            </dd>
+            <dd>
+                @Html.DisplayFor(modelItem => item.SpellDescription)
+            </dd>
         }
 
         <dt>
             @Html.DisplayNameFor(model => model.Inventory)
+            @Html.ActionLink("Add Item", "Create", "Inventory")
         </dt>
         @foreach (var item in Model.Inventory)
         {
-            <dt>
+            <dd>
                 @Html.DisplayFor(modelItem => item.ItemName)
-            </dt>
+            </dd>
         }
 
     </dl>
 </div>
+<div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CharaterId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+</div>

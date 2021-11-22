@@ -24,7 +24,7 @@ namespace RedBadgeFinal.Models
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
 
-        public List<SpellList> Spells { get; set; }
+        public List<SpellDetails> Spells { get; set; }
         public List<ItemList> Inventory { get; set; }
     }
 }
