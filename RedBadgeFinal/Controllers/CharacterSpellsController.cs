@@ -44,6 +44,15 @@ namespace RedBadgeFinal.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = new AddSpellToCharacter();
+            var model = service.GetCharacterSpellById(id);
+
+            return View(model);
+        }
+
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]

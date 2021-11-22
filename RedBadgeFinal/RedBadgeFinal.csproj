@@ -255,13 +255,13 @@
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\Delete.cshtml" />
     <Content Include="Views\CharacterSpells\Create.cshtml" />
-    <Content Include="Views\CharacterSpells\DeletePost.cshtml" />
     <Content Include="Views\CharacterSpells\Index.cshtml" />
     <Content Include="Views\CharacterSpells\Details.cshtml" />
     <Content Include="Views\Inventory\Index.cshtml" />
     <Content Include="Views\Inventory\Create.cshtml" />
     <Content Include="Views\Inventory\Details.cshtml" />
-    <Content Include="Views\Inventory\DeletePost.cshtml" />
+    <Content Include="Views\Inventory\Delete.cshtml" />
+    <Content Include="Views\CharacterSpells\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

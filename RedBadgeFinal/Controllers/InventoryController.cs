@@ -44,6 +44,15 @@ namespace RedBadgeFinal.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = new InventoryService();
+            var model = service.GetCharacterInventoryById(id);
+
+            return View(model);
+        }
+
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -53,7 +62,7 @@ namespace RedBadgeFinal.Controllers
 
             service.DeleteItemFromInventory(id);
 
-            TempData["SaveResult"] = "Your Characters Spell was removed";
+            TempData["SaveResult"] = "Your Characters item was removed";
 
             return RedirectToAction("Index");
         }
