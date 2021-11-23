@@ -20,6 +20,9 @@ namespace RedBadgeFinal.Controllers
 
         public ActionResult Create()
         {
+            var service = new InventoryService();
+            ViewBag.Items = service.GetItems();
+            ViewBag.Characters = service.GetCharacters();
             return View();
         }
         [HttpPost]
@@ -66,5 +69,7 @@ namespace RedBadgeFinal.Controllers
 
             return RedirectToAction("Index");
         }
+
+
     }
 }

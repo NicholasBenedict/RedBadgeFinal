@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace RedBadgeFinal.Services
 {
@@ -71,6 +72,36 @@ namespace RedBadgeFinal.Services
                 ctx.Inventory.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<SelectListItem> GetItems()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Inventory.Select
+                    (e => new SelectListItem
+                    {
+                        Value = e.ItemId.ToString(),
+                        Text = e.Items.ItemName
+                    });
+
+                return query.ToList();
+            }
+        }
+
+        public List<SelectListItem> GetCharacters()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Inventory.Select
+                    (e => new SelectListItem
+                    {
+                        Value = e.CharacterId.ToString(),
+                        Text = e.Character.CharacterName
+                    });
+
+                return query.ToList();
             }
         }
     }

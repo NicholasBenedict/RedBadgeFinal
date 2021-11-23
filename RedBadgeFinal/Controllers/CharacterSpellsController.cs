@@ -1,4 +1,5 @@
-﻿using RedBadgeFinal.Models.CharacterModels;
+﻿using RedBadgeFinal.Models;
+using RedBadgeFinal.Models.CharacterModels;
 using RedBadgeFinal.Services;
 using System;
 using System.Collections.Generic;
@@ -20,19 +21,22 @@ namespace RedBadgeFinal.Controllers
 
         public ActionResult Create()
         {
+            var service = new AddSpellToCharacter();
+            ViewBag.Spells = service.GetSpells();
+            ViewBag.Characters = service.GetCharacters();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CharacterSpellCreate model)
+        public ActionResult Create(CharacterSpellCreate model, int characterId)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-
+            PopulateSpells();
             var service = new AddSpellToCharacter();
-            service.CreateCharacterSpell(model);
+            service.CreateCharacterSpell(model, characterId);
             return RedirectToAction("Index");
         }
 
@@ -66,5 +70,11 @@ namespace RedBadgeFinal.Controllers
 
             return RedirectToAction("Index");
         }
+
+        private void PopulateSpells()
+        {
+            ViewBag.SpellList = new SelectList(new SpellService().GetSpells());
+        }
+
     }
 }

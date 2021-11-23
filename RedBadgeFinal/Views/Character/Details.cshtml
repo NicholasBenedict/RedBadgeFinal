@@ -116,7 +116,9 @@
 
         <dt>
             @Html.DisplayNameFor(model => model.Spells)
-            @Html.ActionLink("Add Spell", "Create", "CharacterSpells")
+            @Html.ActionLink("Add Spell", "../CharacterSpells/Create", "CharacterSpells", new { id = Model.CharaterId})
+            @Html.ActionLink("Delete Spell", "../CharacterSpells/Delete", "CharacterSpells")
+            
         </dt>
         @foreach (var item in Model.Spells)
         {

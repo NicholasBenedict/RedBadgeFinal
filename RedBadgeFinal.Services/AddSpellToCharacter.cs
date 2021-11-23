@@ -1,4 +1,5 @@
 ﻿using RedBadgeFinal.Data;
+using RedBadgeFinal.Models;
 using RedBadgeFinal.Models.CharacterModels;
 using RedBadgeFinal.Models.CharacterSpell;
 using System;
@@ -6,17 +7,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace RedBadgeFinal.Services
 {
     public class AddSpellToCharacter
     {
-        public bool CreateCharacterSpell(CharacterSpellCreate model)
+        public bool CreateCharacterSpell(CharacterSpellCreate model, int characterId)
         {
             var entity = new CharacterSpell()
             {
                 CharacterId = model.CharacterId,
-                SpellId = model.SpellId
+                SpellId = model.SpellId,
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -70,6 +72,35 @@ namespace RedBadgeFinal.Services
                 ctx.CharacterSpells.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public List<SelectListItem> GetSpells()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.CharacterSpells.Select
+                    (e => new SelectListItem
+                    {
+                        Value = e.SpellId.ToString(), Text = e.Spell.SpellName
+                    });
+
+                return query.ToList();
+            }
+        }
+
+        public List<SelectListItem> GetCharacters()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.CharacterSpells.Select
+                    (e => new SelectListItem
+                    {
+                        Value = e.CharacterId.ToString(),
+                        Text = e.Character.CharacterName
+                    });
+
+                return query.ToList();
             }
         }
     }
