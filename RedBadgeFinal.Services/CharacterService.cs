@@ -80,7 +80,7 @@ namespace RedBadgeFinal.Services
                         Wis = entity.Wisdom,
                         Cha = entity.Charisma,
                         Spells = entity.Spells.Select(e => new SpellDetails { SpellId = e.Spell.SpellId, SpellName = e.Spell.SpellName, SpellDescription = e.Spell.SpellDescription }).ToList(),
-                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName }).ToList() 
+                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName, ItemDescription = e.Items.ItemDescription }).ToList() 
                     };
             }
         }

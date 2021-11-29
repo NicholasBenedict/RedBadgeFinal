@@ -3,13 +3,12 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
-
+<div class="title-heading">
+    <h2>Character</h2>
+</div>
 <div>
-    <h4>CharacterDetail</h4>
     <hr />
-    <div class="stat-block wide">
+    <div class="stat-block">
         <hr class="orange-border" />
         <div class="section-left">
             <div class="creature-heading">
@@ -22,14 +21,10 @@
             <div class="top-stats">
                 <div class="property-line first">
                     <h4>@Html.DisplayNameFor(model => model.Level) @Html.DisplayFor(model => model.Level)</h4>
-                </div> <!-- property line -->
+                </div> 
                 <div class="property-line">
                     <h4>@Html.DisplayNameFor(model => model.HitPoints) @Html.DisplayFor(model => model.HitPoints)</h4>
-                </div> <!-- property line -->
-                <div class="property-line last">
-                    <h4>Speed</h4>
-                    <p>25ft.</p>
-                </div> <!-- property line -->
+                </div> 
                 <svg height="5" width="100%" class="tapered-rule">
                     <polyline points="0,0 400,2.5 0,5"></polyline>
                 </svg>
@@ -62,89 +57,34 @@
                 <svg height="5" width="100%" class="tapered-rule">
                     <polyline points="0,0 400,2.5 0,5"></polyline>
                 </svg>
-                <div class="property-line first">
-                    <h4>Damage Immunities</h4>
-                    <p>poison, psychic</p>
-                </div> <!-- property line -->
-                <div class="property-line">
-                    <h4>Condition Immunities</h4>
-                    <p>
-                        blinded, charmed, deafened, exhaustion, frightened,
-                        petrified, poisoned
-                    </p>
-                </div> <!-- property line -->
-                <div class="property-line">
-                    <h4>Senses</h4>
-                    <p>blindsight 60ft. (blind beyond this radius), passive Perception 6</p>
-                </div> <!-- property line -->
-                <div class="property-line">
-                    <h4>Languages</h4>
-                    <p>&mdash;</p>
-                </div> <!-- property line -->
-                <div class="property-line last">
-                    <h4>Challenge</h4>
-                    <p>1 (200 XP)</p>
-                </div> <!-- property line -->
-            </div> <!-- top stats -->
-            <svg height="5" width="100%" class="tapered-rule">
-                <polyline points="0,0 400,2.5 0,5"></polyline>
-            </svg>
-            <div class="property-block">
-                <h4>Antimagic Suceptibility.</h4>
-                <p>
-                    The armor is incapacitated while in the area of an <i>
-                        antimagic
-                        field
-                    </i>.  If targeted by <i>dispel magic</i>, the armor must succeed
-                    on a Constitution saving throw against the caster’s spell save DC or
-                    fall unconscious for 1 minute.
-                </p>
-            </div> <!-- property block -->
-            <div class="property-block">
-                <h4>False Appearance.</h4>
-                <p>
-                    While the armor remains motionless, it is indistinguishable from a
-                    normal suit of armor.
-                </p>
-            </div> <!-- property block -->
-        </div> <!-- section left -->
-        <div class="section-right">
-            <div class="actions">
-                <h3>@Html.DisplayNameFor(model => model.Spells)</h3>
-                <div class="property-block">
+                <div class="actions">
+                    <h3>@Html.DisplayNameFor(model => model.Spells)</h3>
+                    <div class="property-block">
 
-                    @foreach (var item in Model.Spells)
-                    {
-                        <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.SpellName): </h4>
-                        <p>@Html.DisplayFor(modelItem => item.SpellDescription)</p><br />
-                    }
-                </div> <!-- property block -->
-                <div class="property-block">
-                    <h4>Slam.</h4>
-                    <p>
-                        <i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
-                        <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.
-                    </p>
-                </div> <!-- property block -->
-            </div> <!-- actions -->
-            <div class="actions">
-                <h3>@Html.DisplayNameFor(model => model.Inventory) </h3>
-                <div class="property-block">
-                    @foreach (var item in Model.Inventory)
-                    {
-                        <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.ItemName): </h4>
-                        <p>@Html.DisplayFor(modelItem => item.ItemDescription)</p><br />
-                    }
-                </div> <!-- property block -->
-                <div class="property-block">
-                    <h4>Slam.</h4>
-                    <p>
-                        <i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
-                        <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.
-                    </p>
-                </div> <!-- property block -->
-            </div> <!-- actions -->
-        </div> <!-- section right -->
+                        @foreach (var item in Model.Spells)
+                        {
+                            <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.SpellName): </h4>
+                            <p>@Html.DisplayFor(modelItem => item.SpellDescription)</p><br />
+                        }
+                    </div>
+                    @Html.ActionLink("Add", "../CharacterSpells/Create")
+                    <svg height="5" width="100%" class="tapered-rule">
+                        <polyline points="0,0 400,2.5 0,5"></polyline>
+                    </svg>
+                    <div class="property-block">
+                        <h3>@Html.DisplayNameFor(model => model.Inventory) </h3>
+                        <div class="property-block">
+                            @foreach (var item in Model.Inventory)
+                            {
+                                <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.ItemName): </h4>
+                                <p>@Html.DisplayFor(modelItem => item.ItemDescription)</p><br />
+                            }
+                        </div>
+                        @Html.ActionLink("Add", "../Inventory/Create")
+                    </div>
+                </div>
+            </div> <!-- top stats -->
+        </div> <!-- section left -->
         <hr class="orange-border bottom" />
     </div> <!-- stat block -->
 </div>
