@@ -79,11 +79,11 @@ namespace RedBadgeFinal.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Inventory.Select
+                var query = ctx.Items.Select
                     (e => new SelectListItem
                     {
                         Value = e.ItemId.ToString(),
-                        Text = e.Items.ItemName
+                        Text = e.ItemName
                     });
 
                 return query.ToList();
@@ -94,11 +94,11 @@ namespace RedBadgeFinal.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Inventory.Select
+                var query = ctx.Characters.Select
                     (e => new SelectListItem
                     {
                         Value = e.CharacterId.ToString(),
-                        Text = e.Character.CharacterName
+                        Text = e.CharacterName
                     });
 
                 return query.ToList();

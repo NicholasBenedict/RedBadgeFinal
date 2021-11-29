@@ -9,143 +9,151 @@
 <div>
     <h4>CharacterDetail</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CharaterId)
-        </dt>
+    <div class="stat-block wide">
+        <hr class="orange-border" />
+        <div class="section-left">
+            <div class="creature-heading">
+                <h1>@Html.DisplayFor(model => model.CharacterName)</h1>
+                <h2>@Html.DisplayFor(model => model.CharacterRace) @Html.DisplayFor(model => model.CharacterClass) </h2>
+            </div> <!-- creature heading -->
+            <svg height="5" width="100%" class="tapered-rule">
+                <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+            <div class="top-stats">
+                <div class="property-line first">
+                    <h4>@Html.DisplayNameFor(model => model.Level) @Html.DisplayFor(model => model.Level)</h4>
+                </div> <!-- property line -->
+                <div class="property-line">
+                    <h4>@Html.DisplayNameFor(model => model.HitPoints) @Html.DisplayFor(model => model.HitPoints)</h4>
+                </div> <!-- property line -->
+                <div class="property-line last">
+                    <h4>Speed</h4>
+                    <p>25ft.</p>
+                </div> <!-- property line -->
+                <svg height="5" width="100%" class="tapered-rule">
+                    <polyline points="0,0 400,2.5 0,5"></polyline>
+                </svg>
+                <div class="abilities">
+                    <div class="ability-strength">
+                        <h4>@Html.DisplayNameFor(model => model.Str)</h4>
+                        <p>@Html.DisplayFor(model => model.Str)</p>
+                    </div> <!-- ability strength -->
+                    <div class="ability-dexterity">
+                        <h4>@Html.DisplayNameFor(model => model.Dex)</h4>
+                        <p>@Html.DisplayFor(model => model.Dex)</p>
+                    </div> <!-- ability dexterity -->
+                    <div class="ability-constitution">
+                        <h4>@Html.DisplayNameFor(model => model.Con)</h4>
+                        <p>@Html.DisplayFor(model => model.Con)</p>
+                    </div> <!-- ability constitution -->
+                    <div class="ability-intelligence">
+                        <h4>@Html.DisplayNameFor(model => model.Int)</h4>
+                        <p>@Html.DisplayFor(model => model.Int)</p>
+                    </div> <!-- ability intelligence -->
+                    <div class="ability-wisdom">
+                        <h4>@Html.DisplayNameFor(model => model.Wis)</h4>
+                        <p>@Html.DisplayFor(model => model.Wis)</p>
+                    </div> <!-- ability wisdom -->
+                    <div class="ability-charisma">
+                        <h4>@Html.DisplayNameFor(model => model.Cha)</h4>
+                        <p>@Html.DisplayFor(model => model.Cha)</p>
+                    </div> <!-- ability charisma -->
+                </div> <!-- abilities -->
+                <svg height="5" width="100%" class="tapered-rule">
+                    <polyline points="0,0 400,2.5 0,5"></polyline>
+                </svg>
+                <div class="property-line first">
+                    <h4>Damage Immunities</h4>
+                    <p>poison, psychic</p>
+                </div> <!-- property line -->
+                <div class="property-line">
+                    <h4>Condition Immunities</h4>
+                    <p>
+                        blinded, charmed, deafened, exhaustion, frightened,
+                        petrified, poisoned
+                    </p>
+                </div> <!-- property line -->
+                <div class="property-line">
+                    <h4>Senses</h4>
+                    <p>blindsight 60ft. (blind beyond this radius), passive Perception 6</p>
+                </div> <!-- property line -->
+                <div class="property-line">
+                    <h4>Languages</h4>
+                    <p>&mdash;</p>
+                </div> <!-- property line -->
+                <div class="property-line last">
+                    <h4>Challenge</h4>
+                    <p>1 (200 XP)</p>
+                </div> <!-- property line -->
+            </div> <!-- top stats -->
+            <svg height="5" width="100%" class="tapered-rule">
+                <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+            <div class="property-block">
+                <h4>Antimagic Suceptibility.</h4>
+                <p>
+                    The armor is incapacitated while in the area of an <i>
+                        antimagic
+                        field
+                    </i>.  If targeted by <i>dispel magic</i>, the armor must succeed
+                    on a Constitution saving throw against the caster’s spell save DC or
+                    fall unconscious for 1 minute.
+                </p>
+            </div> <!-- property block -->
+            <div class="property-block">
+                <h4>False Appearance.</h4>
+                <p>
+                    While the armor remains motionless, it is indistinguishable from a
+                    normal suit of armor.
+                </p>
+            </div> <!-- property block -->
+        </div> <!-- section left -->
+        <div class="section-right">
+            <div class="actions">
+                <h3>@Html.DisplayNameFor(model => model.Spells)</h3>
+                <div class="property-block">
 
-        <dd>
-            @Html.DisplayFor(model => model.CharaterId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CharacterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterRace)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CharacterRace)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterClass)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CharacterClass)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterBackground)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CharacterBackground)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Level)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Level)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HitPoints)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HitPoints)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Strength)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Strength)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dexterity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dexterity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Constitution)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Constitution)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Intelligence)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Intelligence)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Wisdom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Wisdom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Charisma)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Charisma)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Spells)
-            @Html.ActionLink("Add Spell", "../CharacterSpells/Create", "CharacterSpells", new { id = Model.CharaterId})
-            @Html.ActionLink("Delete Spell", "../CharacterSpells/Delete", "CharacterSpells")
-            
-        </dt>
-        @foreach (var item in Model.Spells)
-        {
-            <dd>
-                @Html.DisplayFor(modelItem => item.SpellName)
-            </dd>
-            <dd>
-                @Html.DisplayFor(modelItem => item.SpellDescription)
-            </dd>
-        }
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Inventory)
-            @Html.ActionLink("Add Item", "Create", "Inventory")
-        </dt>
-        @foreach (var item in Model.Inventory)
-        {
-            <dd>
-                @Html.DisplayFor(modelItem => item.ItemName)
-            </dd>
-        }
-
-    </dl>
+                    @foreach (var item in Model.Spells)
+                    {
+                        <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.SpellName): </h4>
+                        <p>@Html.DisplayFor(modelItem => item.SpellDescription)</p><br />
+                    }
+                </div> <!-- property block -->
+                <div class="property-block">
+                    <h4>Slam.</h4>
+                    <p>
+                        <i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
+                        <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.
+                    </p>
+                </div> <!-- property block -->
+            </div> <!-- actions -->
+            <div class="actions">
+                <h3>@Html.DisplayNameFor(model => model.Inventory) </h3>
+                <div class="property-block">
+                    @foreach (var item in Model.Inventory)
+                    {
+                        <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.ItemName): </h4>
+                        <p>@Html.DisplayFor(modelItem => item.ItemDescription)</p><br />
+                    }
+                </div> <!-- property block -->
+                <div class="property-block">
+                    <h4>Slam.</h4>
+                    <p>
+                        <i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
+                        <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.
+                    </p>
+                </div> <!-- property block -->
+            </div> <!-- actions -->
+        </div> <!-- section right -->
+        <hr class="orange-border bottom" />
+    </div> <!-- stat block -->
 </div>
+
 <div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CharaterId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CharaterId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
+
+

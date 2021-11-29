@@ -60,12 +60,12 @@ namespace RedBadgeFinal.Controllers
                     CharacterClass = detail.CharacterClass,
                     Level = detail.Level,
                     HitPoints = detail.HitPoints,
-                    Strength = detail.Strength,
-                    Dexterity = detail.Dexterity, 
-                    Constitution = detail.Constitution,
-                    Intelligence = detail.Intelligence,
-                    Wisdom = detail.Wisdom,
-                    Charisma = detail.Charisma
+                    Strength = detail.Str,
+                    Dexterity = detail.Dex, 
+                    Constitution = detail.Con,
+                    Intelligence = detail.Int,
+                    Wisdom = detail.Wis,
+                    Charisma = detail.Cha
                 };
 
             return View(model);

@@ -63,6 +63,18 @@ namespace RedBadgeFinal.Services
                     };
             }
         }
+
+/*        public CharacterSpellDetails GetCharacterSpellsByCharacterId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.CharacterSpells.Select(e => new CharacterSpellDetails
+                {
+
+                }).Where(id == );
+                return entity.ToArray();
+            }
+        }*/
         public bool DeleteCharacterSpell(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -79,10 +91,11 @@ namespace RedBadgeFinal.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.CharacterSpells.Select
+                var query = ctx.Spells.Select
                     (e => new SelectListItem
                     {
-                        Value = e.SpellId.ToString(), Text = e.Spell.SpellName
+                        Value = e.SpellId.ToString(), 
+                        Text = e.SpellName
                     });
 
                 return query.ToList();
@@ -93,11 +106,11 @@ namespace RedBadgeFinal.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.CharacterSpells.Select
+                var query = ctx.Characters.Select
                     (e => new SelectListItem
                     {
                         Value = e.CharacterId.ToString(),
-                        Text = e.Character.CharacterName
+                        Text = e.CharacterName
                     });
 
                 return query.ToList();

@@ -73,14 +73,14 @@ namespace RedBadgeFinal.Services
                         Level = entity.Level,
                         HitPoints = entity.HitPoints,
                         CharacterBackground = entity.CharacterBackground,
-                        Strength = entity.Strength,
-                        Dexterity = entity.Dexterity,
-                        Constitution = entity.Constitution,
-                        Intelligence = entity.Intelligence,
-                        Wisdom = entity.Wisdom,
-                        Charisma = entity.Charisma,
+                        Str = entity.Strength,
+                        Dex = entity.Dexterity,
+                        Con = entity.Constitution,
+                        Int = entity.Intelligence,
+                        Wis = entity.Wisdom,
+                        Cha = entity.Charisma,
                         Spells = entity.Spells.Select(e => new SpellDetails { SpellId = e.Spell.SpellId, SpellName = e.Spell.SpellName, SpellDescription = e.Spell.SpellDescription }).ToList(),
-                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName }).ToList()
+                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName }).ToList() 
                     };
             }
         }

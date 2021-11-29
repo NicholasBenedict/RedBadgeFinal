@@ -26,6 +26,16 @@ namespace RedBadgeFinal.Controllers
             ViewBag.Characters = service.GetCharacters();
             return View();
         }
+
+/*        public ActionResult Create(int id)
+        {
+            var service = new AddSpellToCharacter();
+            ViewBag.Spells = service.GetSpells();
+            ViewBag.Characters = service.GetCharacters();
+            return View();
+        }*/
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterSpellCreate model, int characterId)
@@ -37,7 +47,7 @@ namespace RedBadgeFinal.Controllers
             PopulateSpells();
             var service = new AddSpellToCharacter();
             service.CreateCharacterSpell(model, characterId);
-            return RedirectToAction("Index");
+            return RedirectToAction("../Character/Details/" + characterId.ToString());
         }
 
         public ActionResult Details(int id)
