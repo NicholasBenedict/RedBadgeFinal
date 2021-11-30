@@ -66,6 +66,10 @@
                             <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.SpellName): </h4>
                             <p>@Html.DisplayFor(modelItem => item.SpellDescription)</p><br />
                         }
+                        @foreach (var spells in Model.CharacterSpellDetails)
+                        {
+                            @Html.ActionLink("Delete", "../CharacterSpells/Delete", new { id = spells.CharacterSpellId })<br />
+                        }
                     </div>
                     @Html.ActionLink("Add", "../CharacterSpells/Create")
                     <svg height="5" width="100%" class="tapered-rule">
@@ -78,6 +82,10 @@
                             {
                                 <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.ItemName): </h4>
                                 <p>@Html.DisplayFor(modelItem => item.ItemDescription)</p><br />
+                            }
+                            @foreach(var items in Model.InventoryDetails)
+                            {
+                                @Html.ActionLink("Delete", "../Inventory/Delete", new { id = items.InventoryId})<br />
                             }
                         </div>
                         @Html.ActionLink("Add", "../Inventory/Create")

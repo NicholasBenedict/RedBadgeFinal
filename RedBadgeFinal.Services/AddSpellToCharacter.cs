@@ -30,17 +30,17 @@ namespace RedBadgeFinal.Services
         }
         public IEnumerable<CharacterSpellListItem> GetCharacterSpells()
         {
+/*            string[] separateString = { "}," };
+            string json = new WebClient().DownloadString("https://www.dnd5eapi.co/api/spells");
+            string holder = json.Substring(24);
+            string[] itemArray = holder.Split(separateString, StringSplitOptions.None);
+            List<string> SpellList = new List<string>();
+            foreach (var item in itemArray)
+            {
+                string[] holder2 = item.Split(',');
+                SpellList.Add(holder2[1]);
+            }*/
 
-            /*            string[] separateString = { "}," };
-                        string json = new WebClient().DownloadString("https://www.dnd5eapi.co/api/spells");
-                        string holder = json.Substring(24);
-                        string[] itemArray = holder.Split(separateString, StringSplitOptions.None);
-                        List<string> SpellList = new List<string>();
-                        foreach (var item in itemArray)
-                        {
-                            string[] holder2 = item.Split(',');
-                            SpellList.Add(holder2[1]);
-                        }*/
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx

@@ -36,7 +36,7 @@ namespace RedBadgeFinal.Controllers
 
             var service = new InventoryService();
             service.CreateCharacterInventory(model);
-            return RedirectToAction("Index");
+            return RedirectToAction("../Character/Index");
         }
 
         public ActionResult Details(int id)
@@ -67,7 +67,7 @@ namespace RedBadgeFinal.Controllers
 
             TempData["SaveResult"] = "Your Characters item was removed";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("../Character/Index");
         }
 
 

@@ -1,5 +1,7 @@
 ﻿using RedBadgeFinal.Data;
 using RedBadgeFinal.Models;
+using RedBadgeFinal.Models.CharacterSpell;
+using RedBadgeFinal.Models.InventoryModels;
 using RedBadgeFinal.Models.ItemModels;
 using System;
 using System.Collections.Generic;
@@ -80,7 +82,9 @@ namespace RedBadgeFinal.Services
                         Wis = entity.Wisdom,
                         Cha = entity.Charisma,
                         Spells = entity.Spells.Select(e => new SpellDetails { SpellId = e.Spell.SpellId, SpellName = e.Spell.SpellName, SpellDescription = e.Spell.SpellDescription }).ToList(),
-                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName, ItemDescription = e.Items.ItemDescription }).ToList() 
+                        Inventory = entity.Inventories.Select(e => new ItemList { ItemId = e.Items.ItemId, ItemName = e.Items.ItemName, ItemDescription = e.Items.ItemDescription }).ToList(),
+                        InventoryDetails = entity.Inventories.Select(e => new InventoryDetail { InventoryId = e.InventoryId }).ToList(),
+                        CharacterSpellDetails = entity.Spells.Select(e => new CharacterSpellDetails { CharacterSpellId = e.CharacterSpellId}).ToList()
                     };
             }
         }

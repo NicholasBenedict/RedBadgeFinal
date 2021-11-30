@@ -1,4 +1,6 @@
 ﻿using RedBadgeFinal.Data;
+using RedBadgeFinal.Models.CharacterSpell;
+using RedBadgeFinal.Models.InventoryModels;
 using RedBadgeFinal.Models.ItemModels;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,8 @@ namespace RedBadgeFinal.Models
 
         public List<SpellDetails> Spells { get; set; }
         public List<ItemList> Inventory { get; set; }
+        public List<InventoryDetail> InventoryDetails { get; set; }
+        public List<CharacterSpellDetails> CharacterSpellDetails { get; set; }
 
     }
 }

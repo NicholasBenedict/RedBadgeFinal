@@ -78,7 +78,7 @@ namespace RedBadgeFinal.Controllers
 
             TempData["SaveResult"] = "Your Characters Spell was removed";
 
-            return RedirectToAction("Index");
+            return RedirectToAction("../Character/Index");
         }
 
         private void PopulateSpells()
