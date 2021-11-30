@@ -7,13 +7,13 @@ namespace RedBadgeFinal.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class New_Migration : IMigrationMetadata
+    public sealed partial class firstMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(New_Migration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111291745032_New_Migration"; }
+            get { return "202111301940132_firstMigration"; }
         }
         
         string IMigrationMetadata.Source
