@@ -1,4 +1,4 @@
-# D&D Character Creator#
+# D&D Character Creator
 ## Mission Statement ##
 To help Pen in paper players have an easy way to organize their characters for D&D
 ----------------------------------------------------------------------------------------------------------------
