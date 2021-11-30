@@ -1,0 +1,107 @@
+﻿@model RedBadgeFinal.Models.CharacterDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="title-heading">
+    <h2>Character</h2>
+</div>
+<div>
+    <hr />
+    <div class="stat-block">
+        <hr class="orange-border" />
+        <div class="section-left">
+            <div class="creature-heading">
+                <h1>@Html.DisplayFor(model => model.CharacterName)</h1>
+                <h2>@Html.DisplayFor(model => model.CharacterRace) @Html.DisplayFor(model => model.CharacterClass) </h2>
+            </div> <!-- creature heading -->
+            <svg height="5" width="100%" class="tapered-rule">
+                <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+            <div class="top-stats">
+                <div class="property-line first">
+                    <h4>@Html.DisplayNameFor(model => model.Level) @Html.DisplayFor(model => model.Level)</h4>
+                </div> 
+                <div class="property-line">
+                    <h4>@Html.DisplayNameFor(model => model.HitPoints) @Html.DisplayFor(model => model.HitPoints)</h4>
+                </div> 
+                <svg height="5" width="100%" class="tapered-rule">
+                    <polyline points="0,0 400,2.5 0,5"></polyline>
+                </svg>
+                <div class="abilities">
+                    <div class="ability-strength">
+                        <h4>@Html.DisplayNameFor(model => model.Str)</h4>
+                        <p>@Html.DisplayFor(model => model.Str)</p>
+                    </div> <!-- ability strength -->
+                    <div class="ability-dexterity">
+                        <h4>@Html.DisplayNameFor(model => model.Dex)</h4>
+                        <p>@Html.DisplayFor(model => model.Dex)</p>
+                    </div> <!-- ability dexterity -->
+                    <div class="ability-constitution">
+                        <h4>@Html.DisplayNameFor(model => model.Con)</h4>
+                        <p>@Html.DisplayFor(model => model.Con)</p>
+                    </div> <!-- ability constitution -->
+                    <div class="ability-intelligence">
+                        <h4>@Html.DisplayNameFor(model => model.Int)</h4>
+                        <p>@Html.DisplayFor(model => model.Int)</p>
+                    </div> <!-- ability intelligence -->
+                    <div class="ability-wisdom">
+                        <h4>@Html.DisplayNameFor(model => model.Wis)</h4>
+                        <p>@Html.DisplayFor(model => model.Wis)</p>
+                    </div> <!-- ability wisdom -->
+                    <div class="ability-charisma">
+                        <h4>@Html.DisplayNameFor(model => model.Cha)</h4>
+                        <p>@Html.DisplayFor(model => model.Cha)</p>
+                    </div> <!-- ability charisma -->
+                </div> <!-- abilities -->
+                <svg height="5" width="100%" class="tapered-rule">
+                    <polyline points="0,0 400,2.5 0,5"></polyline>
+                </svg>
+                <div class="actions">
+                    <h3>@Html.DisplayNameFor(model => model.Spells)</h3>
+                    <div class="property-block">
+
+                        @foreach (var item in Model.Spells)
+                        {
+                            <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.SpellName): </h4>
+                            <p>@Html.DisplayFor(modelItem => item.SpellDescription)</p><br />
+                        }
+                        @foreach (var spells in Model.CharacterSpellDetails)
+                        {
+                            @Html.ActionLink("Delete", "../CharacterSpells/Delete", new { id = spells.CharacterSpellId })<br />
+                        }
+                    </div>
+                    @Html.ActionLink("Add", "../CharacterSpells/Create")
+                    <svg height="5" width="100%" class="tapered-rule">
+                        <polyline points="0,0 400,2.5 0,5"></polyline>
+                    </svg>
+                    <div class="property-block">
+                        <h3>@Html.DisplayNameFor(model => model.Inventory) </h3>
+                        <div class="property-block">
+                            @foreach (var item in Model.Inventory)
+                            {
+                                <h4 style="font-weight: bold">@Html.DisplayFor(modelItem => item.ItemName): </h4>
+                                <p>@Html.DisplayFor(modelItem => item.ItemDescription)</p><br />
+                            }
+                            @foreach(var items in Model.InventoryDetails)
+                            {
+                                @Html.ActionLink("Delete", "../Inventory/Delete", new { id = items.InventoryId})<br />
+                            }
+                        </div>
+                        @Html.ActionLink("Add", "../Inventory/Create")
+                    </div>
+                </div>
+            </div> <!-- top stats -->
+        </div> <!-- section left -->
+        <hr class="orange-border bottom" />
+    </div> <!-- stat block -->
+</div>
+
+<div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CharaterId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+
+

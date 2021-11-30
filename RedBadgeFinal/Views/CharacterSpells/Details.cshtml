@@ -1,0 +1,58 @@
+﻿@model RedBadgeFinal.Models.CharacterSpell.CharacterSpellDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CharacterSpellDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterSpellId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterSpellId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpellId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpellId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpellName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpellName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
