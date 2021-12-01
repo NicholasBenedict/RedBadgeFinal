@@ -30,17 +30,6 @@ namespace RedBadgeFinal.Services
         }
         public IEnumerable<CharacterSpellListItem> GetCharacterSpells()
         {
-/*            string[] separateString = { "}," };
-            string json = new WebClient().DownloadString("https://www.dnd5eapi.co/api/spells");
-            string holder = json.Substring(24);
-            string[] itemArray = holder.Split(separateString, StringSplitOptions.None);
-            List<string> SpellList = new List<string>();
-            foreach (var item in itemArray)
-            {
-                string[] holder2 = item.Split(',');
-                SpellList.Add(holder2[1]);
-            }*/
-
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx
@@ -76,17 +65,17 @@ namespace RedBadgeFinal.Services
             }
         }
 
-/*        public CharacterSpellDetails GetCharacterSpellsByCharacterId(int id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx.CharacterSpells.Select(e => new CharacterSpellDetails
+        /*        public CharacterSpellDetails GetCharacterSpellsByCharacterId(int id)
                 {
+                    using (var ctx = new ApplicationDbContext())
+                    {
+                        var entity = ctx.CharacterSpells.Select(e => new CharacterSpellDetails
+                        {
 
-                }).Where(id == );
-                return entity.ToArray();
-            }
-        }*/
+                        }).Where(id == );
+                        return entity.ToArray();
+                    }
+                }*/
         public bool DeleteCharacterSpell(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -106,7 +95,7 @@ namespace RedBadgeFinal.Services
                 var query = ctx.Spells.Select
                     (e => new SelectListItem
                     {
-                        Value = e.SpellId.ToString(), 
+                        Value = e.SpellId.ToString(),
                         Text = e.SpellName
                     });
 
@@ -127,6 +116,22 @@ namespace RedBadgeFinal.Services
 
                 return query.ToList();
             }
+        }
+        public CharacterSpellTestModel GetSpellsFromAPI()
+        {
+            string[] separateString = { "}," };
+            string json = new WebClient().DownloadString("https://www.dnd5eapi.co/api/spells");
+            string holder = json.Substring(24);
+            string[] itemArray = holder.Split(separateString, StringSplitOptions.None);
+            List<string> SpellList = new List<string>();
+            var spellList = new CharacterSpellTestModel();
+            foreach (var item in itemArray)
+            {
+                string[] holder2 = item.Split(',');
+                spellList.SpellsFromAPI.Add( holder2[1]);
+                SpellList.Add(holder2[1]);
+            }
+            return spellList;
         }
     }
 }
