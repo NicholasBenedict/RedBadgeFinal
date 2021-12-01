@@ -4,6 +4,7 @@ using RedBadgeFinal.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -24,6 +25,7 @@ namespace RedBadgeFinal.Controllers
             var service = new AddSpellToCharacter();
             ViewBag.Spells = service.GetSpells();
             ViewBag.Characters = service.GetCharacters();
+            
             return View();
         }
 

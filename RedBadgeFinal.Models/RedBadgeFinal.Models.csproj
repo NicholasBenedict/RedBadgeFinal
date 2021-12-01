@@ -85,6 +85,7 @@
     <Compile Include="CharacterSpell\CharacterSpellCreate.cs" />
     <Compile Include="CharacterSpell\CharacterSpellListItem.cs" />
     <Compile Include="CharacterSpell\CharacterSpellDetails.cs" />
+    <Compile Include="CharacterSpell\CharacterSpellTestModel.cs" />
     <Compile Include="InventoryModels\InventoryCreate.cs" />
     <Compile Include="InventoryModels\InventoryDetail.cs" />
     <Compile Include="InventoryModels\InventoryEdit.cs" />
